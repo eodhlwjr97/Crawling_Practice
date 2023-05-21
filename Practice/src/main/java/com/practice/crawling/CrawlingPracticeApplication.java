@@ -14,7 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CrawlingPracticeApplication {
 	  public static void getStockPriceList() {
 
-		  	// 1.조회할 URL 셋팅 및 Document 객체로드
+		    // 1.조회할 URL 셋팅 및 Document 객체로드
 		    final String stockList = "https://finance.naver.com/sise/sise_market_sum.nhn?&page=1";
 		    Connection conn = Jsoup.connect(stockList);
 
@@ -38,7 +38,7 @@ public class CrawlingPracticeApplication {
 	  
 	  	  // 칼럼명 정보를 조회하는 함수
 		  public static String getStockHeader(Document document) {
-			// tr 태그로 접근
+		    // tr 태그로 접근
 		    Elements stockTableBody = document.select("table.type_2 thead tr");
 		    StringBuilder sb = new StringBuilder();
 		    // th를 for문으로 각각 조회  
@@ -54,7 +54,7 @@ public class CrawlingPracticeApplication {
 		  
 		  // 데이터 리스트 조회하는 함수
 		  public static String getStockList(Document document) {
-			// document.select() 로  html 태그에 접근하여  tr 태그로 접근
+		    // document.select() 로  html 태그에 접근하여  tr 태그로 접근
 		    Elements stockTableBody = document.select("table.type_2 tbody tr");
 		    StringBuilder sb = new StringBuilder();
 		    for (Element element : stockTableBody) {
